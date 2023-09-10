@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Preparación de la palabra
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-select [(ngModel)]="libro">
+        <ion-select-option *ngFor="let libro of libros" [value]="libro">{{ libro }}</ion-select-option>
+      </ion-select>
+      <ion-input placeholder="Ej.: 18, 8-13s" [(ngModel)]="nuevoElemento"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="agregarElemento()">Añadir</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let elemento of listaElementos">
+      {{ elemento }}
+    </ion-item>
+  </ion-list>
+</ion-content>
